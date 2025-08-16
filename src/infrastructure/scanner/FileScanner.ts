@@ -1,7 +1,6 @@
 import { Scanner, RepoInfo } from '../../domain/ports';
 import { Evidence } from '../../domain/models';
 import { URL_REGEX, IPV4_REGEX, IPV6_REGEX } from './extractors';
-import { globby } from 'globby';
 import { isBinary } from 'istextorbinary';
 import fs from 'fs';
 import path from 'path';
@@ -28,6 +27,7 @@ export class FileScanner implements Scanner {
   }
 
   async scanRepo(repo: RepoInfo): Promise<Evidence[]> {
+    const { globby } = await import('globby');
     const git = simpleGit(repo.path);
     let commitSha = '';
     try {
