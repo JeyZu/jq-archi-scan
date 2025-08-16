@@ -1,0 +1,9 @@
+applications:
+  - appId: "auth"
+    domains: ["auth.local","iam.local"]
+    cidr: ["10.10.0.0/24"]
+    dockerServices: ["auth","keycloak"]
+  - appId: "billing"
+    domains: ["billing.local"]
+    cidr: ["10.20.3.15/32"]
+    dockerServices: ["billing-api"]
