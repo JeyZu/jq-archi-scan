@@ -1,0 +1,16 @@
+provider:
+  type: local
+  orgsOrGroups: ["sample-repo"]
+cloning:
+  baseDir: "./workspace"
+  depth: 1
+scan:
+  includeGlobs: ["**/*"]
+  excludeGlobs: ["**/node_modules/**","**/.git/**","**/dist/**"]
+  maxFileSizeKb: 1024
+matching:
+  identityFile: "./examples/identities.yaml"
+  hostnameMatchStrategy: suffix
+export:
+  formats: ["json","csv"]
+  outDir: "./out"
