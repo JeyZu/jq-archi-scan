@@ -1,5 +1,5 @@
-import { Exporter } from '../domain/ports';
-import { Evidence, MatchResult } from '../domain/models';
+import type { Exporter } from '../domain/ports.js';
+import type { Evidence, MatchResult } from '../domain/models.js';
 
 export class ExportUseCase {
   constructor(private exporters: Exporter[]) {}

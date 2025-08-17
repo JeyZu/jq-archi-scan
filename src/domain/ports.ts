@@ -1,4 +1,4 @@
-import { Evidence, MatchResult, IdentityRegistry } from './models';
+import type { Evidence, MatchResult, IdentityRegistry } from './models.js';
 
 export interface RepoInfo {
   name: string;

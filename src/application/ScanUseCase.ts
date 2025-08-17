@@ -1,5 +1,5 @@
-import { Scanner, RepoInfo } from '../domain/ports';
-import { Evidence } from '../domain/models';
+import type { Scanner, RepoInfo } from '../domain/ports.js';
+import type { Evidence } from '../domain/models.js';
 import { promises as fs } from 'fs';
 import path from 'path';
 

@@ -1,6 +1,9 @@
-import { Matcher } from '../../domain/ports';
-import { Evidence, IdentityRegistry, MatchResult, MatchEdge } from '../../domain/models';
-import ipaddr from 'ipaddr.js';
+import type { Matcher } from '../../domain/ports.js';
+import type { Evidence, IdentityRegistry, MatchResult, MatchEdge } from '../../domain/models.js';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const ipaddr = require('ipaddr.js') as typeof import('ipaddr.js');
 
 export class DependencyMatcher implements Matcher {
   constructor(private hostnameStrategy: 'suffix' | 'exact') {}

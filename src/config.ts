@@ -1,6 +1,9 @@
 import { z } from 'zod';
 import fs from 'fs';
-import yaml from 'js-yaml';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const yaml = require('js-yaml') as typeof import('js-yaml');
 
 export const configSchema = z.object({
   provider: z.object({

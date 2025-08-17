@@ -1,8 +1,8 @@
-import { Config } from '../../config';
-import { VCSProvider } from '../../domain/ports';
-import { LocalProvider } from './LocalProvider';
-import { GitHubProvider } from './GitHubProvider';
-import { GitLabProvider } from './GitLabProvider';
+import type { Config } from '../../config.js';
+import type { VCSProvider } from '../../domain/ports.js';
+import { LocalProvider } from './LocalProvider.js';
+import { GitHubProvider } from './GitHubProvider.js';
+import { GitLabProvider } from './GitLabProvider.js';
 
 export function createVCSProvider(config: Config): VCSProvider {
   const { provider, cloning } = config;

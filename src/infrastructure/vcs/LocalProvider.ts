@@ -1,5 +1,5 @@
 import path from 'path';
-import { VCSProvider, RepoInfo } from '../../domain/ports';
+import type { VCSProvider, RepoInfo } from '../../domain/ports.js';
 
 export class LocalProvider implements VCSProvider {
   constructor(private baseDir: string, private repos: string[]) {}

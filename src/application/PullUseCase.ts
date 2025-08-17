@@ -1,4 +1,4 @@
-import { VCSProvider, RepoInfo } from '../domain/ports';
+import type { VCSProvider, RepoInfo } from '../domain/ports.js';
 import { promises as fs } from 'fs';
 import path from 'path';
 
