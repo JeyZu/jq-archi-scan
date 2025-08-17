@@ -1,5 +1,5 @@
-import { Matcher } from '../domain/ports';
-import { Evidence, MatchResult, IdentityRegistry } from '../domain/models';
+import type { Matcher } from '../domain/ports.js';
+import type { Evidence, MatchResult, IdentityRegistry } from '../domain/models.js';
 import { promises as fs } from 'fs';
 import path from 'path';
 

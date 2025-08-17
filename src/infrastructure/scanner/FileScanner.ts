@@ -1,13 +1,16 @@
-import { Scanner, RepoInfo } from '../../domain/ports';
-import { Evidence } from '../../domain/models';
-import { URL_REGEX, IPV4_REGEX, IPV6_REGEX } from './extractors';
-import { isBinary } from 'istextorbinary';
+import type { Scanner, RepoInfo } from '../../domain/ports.js';
+import type { Evidence } from '../../domain/models.js';
+import { URL_REGEX, IPV4_REGEX, IPV6_REGEX } from './extractors.js';
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
 import crypto from 'crypto';
-import simpleGit from 'simple-git';
-import yaml from 'js-yaml';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const { isBinary } = require('istextorbinary') as typeof import('istextorbinary');
+const simpleGit = require('simple-git') as any;
+const yaml = require('js-yaml') as typeof import('js-yaml');
 
 interface ScanConfig {
   includeGlobs: string[];

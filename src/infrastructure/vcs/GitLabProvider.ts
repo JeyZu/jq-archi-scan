@@ -1,8 +1,11 @@
-import { VCSProvider, RepoInfo } from '../../domain/ports';
-import simpleGit from 'simple-git';
+import type { VCSProvider, RepoInfo } from '../../domain/ports.js';
 import axios from 'axios';
 import path from 'path';
 import fs from 'fs';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const simpleGit = require('simple-git') as any;
 
 export class GitLabProvider implements VCSProvider {
   constructor(

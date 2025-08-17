@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import { loadConfig } from './config';
-import { createVCSProvider } from './infrastructure/vcs';
-import { FileScanner } from './infrastructure/scanner/FileScanner';
-import { loadIdentityRegistry } from './infrastructure/registry/IdentityRegistry';
-import { DependencyMatcher } from './infrastructure/matcher/DependencyMatcher';
-import { JSONExporter } from './infrastructure/exporter/JSONExporter';
-import { CSVExporter } from './infrastructure/exporter/CSVExporter';
-import { PullUseCase } from './application/PullUseCase';
-import { ScanUseCase } from './application/ScanUseCase';
-import { MatchUseCase } from './application/MatchUseCase';
-import { ExportUseCase } from './application/ExportUseCase';
+import { loadConfig } from './config.js';
+import { createVCSProvider } from './infrastructure/vcs/index.js';
+import { FileScanner } from './infrastructure/scanner/FileScanner.js';
+import { loadIdentityRegistry } from './infrastructure/registry/IdentityRegistry.js';
+import { DependencyMatcher } from './infrastructure/matcher/DependencyMatcher.js';
+import { JSONExporter } from './infrastructure/exporter/JSONExporter.js';
+import { CSVExporter } from './infrastructure/exporter/CSVExporter.js';
+import { PullUseCase } from './application/PullUseCase.js';
+import { ScanUseCase } from './application/ScanUseCase.js';
+import { MatchUseCase } from './application/MatchUseCase.js';
+import { ExportUseCase } from './application/ExportUseCase.js';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { RepoInfo } from './domain/ports';
-import { Evidence, MatchResult } from './domain/models';
+import type { RepoInfo } from './domain/ports.js';
+import type { Evidence, MatchResult } from './domain/models.js';
 
 const DATA_DIR = '.jqas';
 

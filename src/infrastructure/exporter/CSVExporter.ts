@@ -1,8 +1,11 @@
-import { Exporter } from '../../domain/ports';
-import { Evidence, MatchResult } from '../../domain/models';
+import type { Exporter } from '../../domain/ports.js';
+import type { Evidence, MatchResult } from '../../domain/models.js';
 import fs from 'fs';
 import path from 'path';
-import { format } from '@fast-csv/format';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const { format } = require('@fast-csv/format') as typeof import('@fast-csv/format');
 
 export class CSVExporter implements Exporter {
   async export(match: MatchResult, evidences: Evidence[], outDir: string): Promise<void> {
